@@ -1,14 +1,19 @@
-import { Card } from "@chakra-ui/react";
+import { Box, Button, Center, Flex, Heading, Text } from "@chakra-ui/react";
 import Cards from "./components/Cards";
-import CreditScoreMeter from "./components/CreditScoreMeter";
-import Speedometer from "./components/SpeedoMeter";
-
+import Creditometer from "./components/CreditoMeter";
+import { Router, useRouter } from "next/router";
+import { useEffect } from "react";
 export default function Home() {
-  return (
-    <>
-      {/* <CreditScoreMeter score="900"/> */}
-      {/* <Cards/> */}
-      <Speedometer speed={'700'} maxSpeed={'900'}/>
-    </>
-  )
+  const router = useRouter();
+  useEffect(() => {
+    let apikey = localStorage.getItem("apikey");
+    if (!apikey)
+      apikey = new URLSearchParams(window.location.search).get("apikey");
+    if (!apikey) {
+      router.push("/getstarted");
+    } else {
+      localStorage.setItem("apikey", apikey);
+    }
+  }, []);
+  return <></>;
 }
