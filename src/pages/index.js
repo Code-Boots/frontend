@@ -15,5 +15,9 @@ export default function Home() {
       localStorage.setItem("apikey", apikey);
     }
   }, []);
-  return <></>;
+  return (
+    <>
+      
+    </>
+  );
 }
