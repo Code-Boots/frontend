@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const URL = "https://credito-backend.onrender.com/user/info";
+const URL = "https://credito-backend.onrender.com";
 
 const index = () => {
   const [fullName, setFullName] = useState("");
@@ -20,7 +20,7 @@ const index = () => {
     // submit the data to the server
     try {
       const response = await axios.put(
-        URL,
+        URL + "/user/info",
         {
           fullName,
           phone,
