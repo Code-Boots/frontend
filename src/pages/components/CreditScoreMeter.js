@@ -1,4 +1,4 @@
-import { Box, CircularProgress, CircularProgressLabel, Text } from '@chakra-ui/react';
+import { Box, CircularProgress, CircularProgressLabel, Tag, Td, Text } from '@chakra-ui/react';
 
 export default function CreditScoreMeter({ score }) {
   const meterColors = [
@@ -7,7 +7,7 @@ export default function CreditScoreMeter({ score }) {
     '#f1c40f',
     '#2ecc71',
     '#27ae60',
-    '#3498db'
+    '#32de84'
   ];
 
   const getMeterColor = (score) => {
@@ -20,19 +20,22 @@ export default function CreditScoreMeter({ score }) {
   };
 
   return (
-    <Box textAlign="center" py={8}>
-      <Text fontSize="xl" fontWeight="bold">Your Credit Score</Text>
-      <Text fontSize="4xl" fontWeight="bold" color={getMeterColor(score)}>{score}</Text>
-      <CircularProgress
-        value={score}
-        color={getMeterColor(score)}
-        size="120px"
-        thickness="8px"
-        capIsRound
-        mt={4}
-      >
-        <CircularProgressLabel fontSize="xl">{score}</CircularProgressLabel>
-      </CircularProgress>
-    </Box>
+    <>
+      <Box textAlign="center" py={8}>
+        <Text fontSize="xl" fontWeight="bold">Your Credit Score</Text>
+        <Box position="relative" display="inline-block">
+          <CircularProgress
+            value={score}
+            color={getMeterColor(score)}
+            size="170px"
+            thickness="4px"
+            capIsRound
+            rotation={-90}
+            isIndeterminate={false}
+          />
+          <CircularProgressLabel fontSize="3xl" fontWeight="bold" color={getMeterColor(score)}>{score}</CircularProgressLabel>
+        </Box>
+      </Box>
+    </>
   );
 }
