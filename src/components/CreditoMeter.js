@@ -13,7 +13,7 @@ const Creditometer = ({ value, maxValue }) => {
   }
 
   return (
-    <Box position="relative" width="200px">
+    <Box position="relative" width="200px" color="white">
       <Text textAlign="center" fontSize="2xl" fontWeight="bold" mb="2">
         Your Credit Score
       </Text>
