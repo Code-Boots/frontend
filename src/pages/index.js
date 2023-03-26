@@ -1,4 +1,5 @@
 import Cards from "@/components/Cards";
+import ChatComponent from "@/components/ChatComponent";
 import Creditometer from "@/components/CreditoMeter";
 import { Flex } from "@chakra-ui/react";
 import { useRouter } from "next/router";
@@ -20,11 +21,11 @@ export default function Home() {
   }, []);
   
   return (
-    <>
+    <ChatComponent>
       <Flex justifyContent="center" alignItems="center" mt="10">
         <Creditometer value={'700'} maxValue={'900'}/>
       </Flex>
       <Cards/>
-    </>
+    </ChatComponent>
   );
 }

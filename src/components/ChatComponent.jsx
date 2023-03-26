@@ -23,8 +23,8 @@ const ChatComponent = ({children}) => {
     setTextMessage("")
     const res = await axios.post(`${ServerUrl}/chat/message/`, 
       {
-        "credit_score": 0,
-        "num_cards": 0,
+        "credit_score": 700,
+        "num_cards": 3,
         "question": textMessage
       },
       {
@@ -56,8 +56,8 @@ const ChatComponent = ({children}) => {
     <>
         {children}
         <form onSubmit={(e) => messageSubmit(e)}>
-        <Flex pos="fixed" bottom={0} left="50%" transform="translateX(-50%)" zIndex={3} onClick={() => setIsMessageBlockOpen(true)}>
-            <Input color="white" value={textMessage} bg="#000" onChange={(e) => setTextMessage(e.target.value)} borderColor={"#777"} w="500px" placeholder='Ask your question...' maxW="calc(100vw-30px)" />
+        <Flex pos="fixed" bottom={2} left="50%" transform="translateX(-50%)" zIndex={3} onClick={() => setIsMessageBlockOpen(true)}>
+            <Input color="white" value={textMessage} bg="#000" onChange={(e) => setTextMessage(e.target.value)} borderColor={"#777"} w="80vw" maxW="500px" placeholder='Ask your question...' />
             <Button bg="#000" p="10px" borderRadius={"10px"} color="white" border="1px solid #999" h="40px" onClick={messageSubmit} __css={{
               "&:hover": {
                 bg: "#000"

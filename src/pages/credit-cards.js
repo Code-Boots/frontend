@@ -6,9 +6,9 @@ import React from 'react'
 const CreditCards = () => {
   return (
     <ChatComponent>
-        <Card />
-        <Card />
-        <Card />
+        <Card ind={1} />
+        <Card ind={2} />
+        <Card ind={3} />
     </ChatComponent>
   )
 }
