@@ -14,6 +14,8 @@ export default function Home() {
       router.push("/getstarted");
     } else {
       localStorage.setItem("apikey", apikey);
+      console.log(localStorage.getItem("apikey"));
+      router.push("/");
     }
   }, []);
   
