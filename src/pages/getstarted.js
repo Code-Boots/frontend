@@ -11,7 +11,7 @@ export default function Getstarted() {
   return (
     <Center>
       <Box
-        backgroundColor="gray.100"
+        // backgroundColor="gray.100"
         height="100vh"
         display="flex"
         justifyContent="center"
