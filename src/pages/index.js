@@ -1,15 +1,28 @@
-'use client'
-import { Box } from "@chakra-ui/react"
-import ChatComponent from "@/components/ChatComponent"
-import Card, {LoanCard} from "../components/Card"
+import Cards from "@/components/Cards";
+import Creditometer from "@/components/CreditoMeter";
+import { Flex } from "@chakra-ui/react";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 export default function Home() {
+  const router = useRouter();
+  useEffect(() => {
+    let apikey = localStorage.getItem("apikey");
+    if (!apikey)
+      apikey = new URLSearchParams(window.location.search).get("apikey");
+    if (!apikey) {
+      router.push("/getstarted");
+    } else {
+      localStorage.setItem("apikey", apikey);
+    }
+  }, []);
+  
   return (
-    <ChatComponent>
-      <Card key={1} ind={1} />
-      <Card key={2} ind={2} />
-      <Card key={3} ind={3} />
-      <LoanCard ind={4} />
-    </ChatComponent>
-  )
+    <>
+      <Flex justifyContent="center" alignItems="center" mt="10">
+        <Creditometer value={'700'} maxValue={'900'}/>
+      </Flex>
+      <Cards/>
+    </>
+  );
 }
