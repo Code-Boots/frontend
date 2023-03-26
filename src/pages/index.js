@@ -1,8 +1,9 @@
-import { Box, Button, Center, Flex, Heading, Text } from "@chakra-ui/react";
-import Cards from "./components/Cards";
-import Creditometer from "./components/CreditoMeter";
-import { Router, useRouter } from "next/router";
+import Cards from "@/components/Cards";
+import Creditometer from "@/components/CreditoMeter";
+import { Flex } from "@chakra-ui/react";
+import { useRouter } from "next/router";
 import { useEffect } from "react";
+
 export default function Home() {
   const router = useRouter();
   useEffect(() => {
@@ -15,9 +16,13 @@ export default function Home() {
       localStorage.setItem("apikey", apikey);
     }
   }, []);
+  
   return (
     <>
-      
+      <Flex justifyContent="center" alignItems="center" mt="10">
+        <Creditometer value={'700'} maxValue={'900'}/>
+      </Flex>
+      <Cards/>
     </>
   );
 }
