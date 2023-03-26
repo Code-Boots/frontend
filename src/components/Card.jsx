@@ -9,8 +9,8 @@ import style from "../styles/Dashboard.module.css"
 
 const Card = ({ind}) => {
   return (
-    <Flex margin={"auto"} w="580px" justifyContent="space-between" border="1px solid #eee"  mb='20px'
-        p="15px" pr="30px" borderRadius="10px" bg="white" boxShadow={"2px 2px 3px #ddd, -2px -2px 3px #fff"}>
+    <Flex mt="200px" margin={"auto"} w={{base: "90vw", md: "580px"}} direction={{base: "column", md: "row"}} alignItems="center" justifyContent="space-between" border="1px solid #444" backdropFilter="blur(10px)"  mb='20px' color="white"
+        p="15px" pr="30px" borderRadius="10px" bg="#00000064" >
         <Image src={cardSvg} style={style.cardImg} width={100} height={40} />
         <Box w="370px">
             <Flex justifyContent="space-between" mb="15px">
@@ -46,7 +46,7 @@ const Card = ({ind}) => {
                         Pay Now
                     </Flex>
                 </Button>
-                <Button aria-label={"Set Reminder"} p="0px 15px" borderRadius="5px" h="32px" bg={"linear-gradient(90deg, rgba(255,188,0,1) 0%, rgba(255,123,0,1) 100%)"} 
+                <Button aria-label={"Set Reminder"} p="0px 15px" borderRadius="5px" h="32px" bg={"linear-gradient(90deg, rgba(227,114,0,1) 0%, rgba(255,171,0,1) 100%)"} 
                     bgSize="200%" bgPosition="0" transition="all 0.3s" color="white" __css={{
                         "&:hover" : {
                             bgPosition: "100% 0%"
@@ -65,16 +65,16 @@ const Card = ({ind}) => {
 
 export const LoanCard = ({ind}) => {
     return (
-        <Flex margin={"auto"} w="580px" justifyContent="space-between" border="1px solid #eee"  mb='20px'
-            p="15px" pr="30px" borderRadius="10px" bg="white" boxShadow={"2px 2px 3px #ddd, -2px -2px 3px #fff"}>
-            <Image src={loanSvg} style={style.cardImg} width={100} height={"fit-content"} />
+        <Flex margin={"auto"} alignItems="center" w="580px" justifyContent="space-between" border="1px solid #444" backdropFilter="blur(10px)"  mb='20px' color="white"
+            p="15px" pr="30px" borderRadius="10px" bg="#222">
+            <Image src={loanSvg} style={style.cardImg} width={100} height="100%" />
             <Box w="370px">
                 <Flex justifyContent="space-between" mb="15px">
                     <Box>
                         <Text fontSize={20}>
                             Manipal Bank
                         </Text>
-                        <Text fontSize={14} color="blue">Personal Loan</Text>
+                        <Text fontSize={14} color="aqua">Personal Loan</Text>
                     </Box>
                     <Box>
                         Due Date :
@@ -107,7 +107,7 @@ export const LoanCard = ({ind}) => {
                             Pay Now
                         </Flex>
                     </Button>
-                    <Button aria-label={"Set Reminder"} p="0px 15px" borderRadius="5px" h="32px" bg={"linear-gradient(90deg, rgba(255,188,0,1) 0%, rgba(255,123,0,1) 100%)"} 
+                    <Button aria-label={"Set Reminder"} p="0px 15px" borderRadius="5px" h="32px" bg={"linear-gradient(90deg, rgba(227,114,0,1) 0%, rgba(255,171,0,1) 100%)"} 
                         bgSize="200%" bgPosition="0" transition="all 0.3s" color="white" __css={{
                             "&:hover" : {
                                 bgPosition: "100% 0%"
